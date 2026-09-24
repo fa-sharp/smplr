@@ -339,7 +339,7 @@ export class SmplrImpl implements Smplr {
    * - String or number → stop all voices with that stopId
    * - `{ stopId }` → stop voices with that stopId, optionally at a future time
    * - `{ time }` (no stopId) → stop all voices at a future time. A time of 0 can be
-   *   passed to stop all voices immediately.
+   *   passed to stop all voices immediately, with no release envelope.
    */
   stop(target?: StopTarget): void {
     this.#assertNotDisposed("stop voices");
