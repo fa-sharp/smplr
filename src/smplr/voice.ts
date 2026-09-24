@@ -110,7 +110,8 @@ export class Voice {
 
   /**
    * Stop the voice, applying a release envelope if time is after the start time.
-   * On repeated calls, allows stopping at an earlier time than previously requested.
+   * On subsequent calls, allows stopping at an earlier time than previously requested (e.g.
+   * to immediately stop a currently playing voice).
    */
   stop(time?: number): void {
     if (this.#state === "stopped") return;
